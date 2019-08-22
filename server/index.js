@@ -1,6 +1,7 @@
 const express = require('express')
 const massive = require('massive')
 require('dotenv/config')
+const path = require('path')
 
 const EmployeesCtrl = require('./controllers/employees')
 
@@ -15,6 +16,8 @@ massive( CONNECTION_STRING ).then(db => {
 })
 
 app.use(express.json())
+app.use( express.static( `${__dirname}/../build` ));
+
 
 app.get('/api/employees', EmployeesCtrl.allEmployees)
 app.post('/api/employees', EmployeesCtrl.addEmployees)
@@ -23,7 +26,6 @@ app.put('/api/employees/:id', EmployeesCtrl.updateEmployee)
 
 
 
-const path = require('path'); // Usually moved to the start of file
 
 app.get('*', (req, res)=>{
     res.sendFile(path.join(__dirname, '../build/index.html'));
