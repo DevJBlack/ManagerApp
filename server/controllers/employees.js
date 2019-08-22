@@ -61,7 +61,7 @@ module.exports = {
   updateEmployee: async (req, res) => {
     try {
         let db = req.app.get('db')
-        let { first_name, last_name, email, phone_number } = req.body
+        let { first_name, last_name, email, phone_number } = req.body.edit
         let { id } = req.params
         console.log(req.body, req.params)
         id = +id

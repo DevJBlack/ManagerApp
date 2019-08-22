@@ -38,9 +38,20 @@ body {
   flex-wrap: wrap;
   overflow: hidden;
   overflow-y: scroll;
-  height: 80vh;
+  height: 70vh;
   width: 90vw;
   border: solid 15px $darker-blue;
   border-radius: 25px;
   background-color: $background-gray;
+}
+
+
+@media screen and (min-width: 1000px){
+  .home {
+    flex-direction: column;
+  }
+  
+  .home-block {
+    width: 70vw;
+  }
 }

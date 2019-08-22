@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+
+
 .borderHome {
   height: 100%;
   width: 100%;
@@ -13,14 +15,34 @@
   flex-wrap: wrap;
 }
 
+.divBorder {
+  height: 40%;
+  width: 40%;
+  margin: 0 10px;
+}
 
 
 .border {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100%;
   width: 100%;
   background-color: crimson;
-  margin: 10px;
+  border-radius: 25px;
+}
+
+h4 {
+  font-size: 13px;
+}
+
+p {
+  font-size: 13px;
+}
+
+@media  screen and (min-width: 1000px){
+  .divBorder {
+    width: 25%
+  }
 }

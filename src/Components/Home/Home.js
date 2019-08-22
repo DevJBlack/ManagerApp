@@ -2,6 +2,8 @@ import React from 'react'
 import './Home.scss'
 import NavBar from '../NavBar/NavBar'
 import Employees from '../Employees/Employees'
+import { Link } from 'react-router-dom'
+
 
 
 const Home = () => {
@@ -11,6 +13,7 @@ const Home = () => {
       <div className='home-block'>
         <Employees />
       </div>
+      <Link to='/newemployees'><button>New Employee</button></Link>
     </div>
   )
 }

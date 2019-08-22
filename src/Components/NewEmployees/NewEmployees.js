@@ -1,31 +1,36 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import { hireEmployees } from '../../redux/reducers/employees'
+import axios from 'axios'
+import './NewEmployees.scss'
 
-const ChangesOfEmployees = (props) => {
- 
-  const [isEditing, setIsEditing] = useState(false)
-  const [edit, setEdit] = useState({
+const NewEmployees = (props) => {
+  const [create, setCreate] = useState({
     first_name: '',
     last_name: '',
     email: '',
     phone_number: 0
   })
 
-
   const handleChange = (e) => {
     const {name, value} = e.target
-    setEdit({
-      ...edit,
+    setCreate({
+      ...create,
       [name]: value
     })
   }
 
-  console.log(props.edit)
-  console.log(edit)
+  const addEmployees = () => {
+    axios.post('/api/employees', create).then(res => {
+      setCreate(res.data)
+      props.history.push('/')
+    })
+  }
+
   return (
     <div>
-      { isEditing ? 
-        <div>
-          <input
+      <div>
+        <input
           name='first_name'
           type='text'
           placeholder='First Name'
@@ -50,20 +55,20 @@ const ChangesOfEmployees = (props) => {
           onChange={handleChange}
         />
         <div>
-          <button onClick={() => props.updateEmployees(props.employee, edit)}>Update</button>
-          <button onClick={() => setIsEditing(false)}>Cancel</button>
+          <button onClick={addEmployees}>Add Employee</button>
         </div>
-        </div>
-        :
-        <div>
-          <button onClick={() => setIsEditing(true)}>Edit</button>
-          <button onClick={() => props.letGoEmployee(props.employee)}>Let Go</button>
-        </div>
-      }
+      </div>
     </div>
   )
 }
 
+let mapStateToProps = reduxState => {
+  let { data } = reduxState.employees
+  return { data }
+}
 
+let mapDispatchToProps = {
+  hireEmployees
+}
 
-export default ChangesOfEmployees
+export default connect(mapStateToProps, (mapDispatchToProps))(NewEmployees)
