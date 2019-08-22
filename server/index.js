@@ -20,3 +20,11 @@ app.get('/api/employees', EmployeesCtrl.allEmployees)
 app.post('/api/employees', EmployeesCtrl.addEmployees)
 app.delete('/api/employees/:id', EmployeesCtrl.fireEmployees)
 app.put('/api/employees/:id', EmployeesCtrl.updateEmployee)
+
+
+
+const path = require('path'); // Usually moved to the start of file
+
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
