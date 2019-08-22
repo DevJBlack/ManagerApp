@@ -21,7 +21,8 @@ const NewEmployees = (props) => {
     })
   }
 
-  const addEmployees = () => {
+  const addEmployees = (e) => {
+    e.preventDefault()
     axios.post('/api/employees', create).then(res => {
       setCreate(res.data)
       props.history.push('/')
@@ -31,7 +32,7 @@ const NewEmployees = (props) => {
   return (
     <div className='homeInput'>
       <NavBar />
-      <div className='inputBlock'>
+      <form className='inputBlock'>
         <input
           name='first_name'
           type='text'
@@ -57,9 +58,9 @@ const NewEmployees = (props) => {
           onChange={handleChange}
         />
         <div>
-          <button className='btn' onClick={addEmployees}>Add Employee</button>
+          <button type='submit' className='btn' onClick={addEmployees}>Add Employee</button>
         </div>
-      </div>
+      </form>
     </div>
   )
 }
