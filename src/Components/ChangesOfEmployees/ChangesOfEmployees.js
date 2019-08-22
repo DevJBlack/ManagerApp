@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './ChangesOfEmployees.scss'
 
 const ChangesOfEmployees = (props) => {
  
@@ -19,45 +20,43 @@ const ChangesOfEmployees = (props) => {
     })
   }
 
-  console.log(props.edit)
-  console.log(edit)
   return (
-    <div>
+    <div className='borderHome'>
       { isEditing ? 
-        <div>
+          <div className='inputFields'>
+          <div className='buttonBox'>
+            <button className='update Button' onClick={() => props.updateEmployees(props.employee, edit)}>Update</button>
+            <button className='cancel Button' onClick={() => setIsEditing(false)}>Cancel</button>
+          </div>
+            <input
+            name='first_name'
+            type='text'
+            placeholder='First Name'
+            onChange={handleChange}
+          />
           <input
-          name='first_name'
-          type='text'
-          placeholder='First Name'
-          onChange={handleChange}
-        />
-        <input
-          name='last_name'
-          type='text'
-          placeholder='Last Name'
-          onChange={handleChange}
-        />
-        <input
-          name='email'
-          type='text'
-          placeholder='Email '
-          onChange={handleChange}
-        />
-        <input
-          name='phone_number'
-          type='text'
-          placeholder='Phone Number'
-          onChange={handleChange}
-        />
-        <div>
-          <button onClick={() => props.updateEmployees(props.employee, edit)}>Update</button>
-          <button onClick={() => setIsEditing(false)}>Cancel</button>
-        </div>
-        </div>
+            name='last_name'
+            type='text'
+            placeholder='Last Name'
+            onChange={handleChange}
+          />
+          <input
+            name='email'
+            type='text'
+            placeholder='Email '
+            onChange={handleChange}
+          />
+          <input
+            name='phone_number'
+            type='text'
+            placeholder='Phone Number'
+            onChange={handleChange}
+          />
+          </div>
         :
-        <div>
-          <button onClick={() => setIsEditing(true)}>Edit</button>
-          <button onClick={() => props.letGoEmployee(props.employee)}>Let Go</button>
+        <div className='buttonBox'>
+          <button className='edit Button' onClick={() => setIsEditing(true)}>Edit</button>
+          <button className='delete Button' onClick={() => props.letGoEmployee(props.employee)}>Let Go</button>
         </div>
       }
     </div>

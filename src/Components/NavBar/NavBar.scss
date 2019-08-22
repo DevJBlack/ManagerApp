@@ -5,11 +5,19 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+nav a {
+  list-style: none;
+  text-decoration: none;
+  color: $darker-blue;
+}
 .navigation {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 10vh;
-  color: $darker-blue;
+}
+
+h1:hover {
+  cursor: pointer;
+  color: $light-green;
 }

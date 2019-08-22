@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { hireEmployees } from '../../redux/reducers/employees'
 import axios from 'axios'
 import './NewEmployees.scss'
+import NavBar from '../NavBar/NavBar'
 
 const NewEmployees = (props) => {
   const [create, setCreate] = useState({
@@ -28,8 +29,9 @@ const NewEmployees = (props) => {
   }
 
   return (
-    <div>
-      <div>
+    <div className='homeInput'>
+      <NavBar />
+      <div className='inputBlock'>
         <input
           name='first_name'
           type='text'
@@ -55,7 +57,7 @@ const NewEmployees = (props) => {
           onChange={handleChange}
         />
         <div>
-          <button onClick={addEmployees}>Add Employee</button>
+          <button className='btn' onClick={addEmployees}>Add Employee</button>
         </div>
       </div>
     </div>

@@ -1,0 +1,96 @@
+@import '../Colors/colors.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+}
+
+.homeInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+  
+  .inputBlock {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 70vh;
+  width: 90vw;
+  border: solid 15px $darker-blue;
+  border-radius: 25px;
+  background-color: $background-gray;
+}
+
+.inputBlock input {
+  color: $mod-blue;
+  width: 75%;
+  height: 25px;
+  flex-wrap: wrap;
+  margin: 35px 0;
+  border-radius: 100px;
+  background-color: transparent;
+  border: 2px $darker-blue solid;
+  text-align: center;
+}
+
+input::placeholder {
+  color: $mod-blue
+}
+
+
+@keyframes moveInButton{
+  0% {
+    opacity: 0;
+    transform: translateY(30px)
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+
+.btn {
+  background: white;
+  height: 35px;
+  width: 150px;
+  border-radius: 100px;
+  border: none;
+}
+
+.btn:hover {
+  transform: translateY(-3px); 
+  box-shadow: 0 10px 20px rgba(0,0,0,.2)
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2)
+}
+
+.btn-white {
+  background-color: #ffffff;
+  color: #777777;
+}
+
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInButton .5s ease-out .75s;
+  animation-fill-mode: backwards;
+}

@@ -1,0 +1,46 @@
+@import '../Colors/colors.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.buttonBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 35px;
+  width: 100%;
+}
+
+.Button {
+  height: 25px;
+  width: 40%;
+  background-color: $white;
+  border: none;
+  border-radius: 100px;
+}
+
+.inputFields {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.borderHome {
+  height: 100%;
+}
+
+.borderHome input {
+  color: $mod-blue;
+  width: 75%;
+  height: 25px;
+  flex-wrap: wrap;
+  border-radius: 100px;
+  background-color: transparent;
+  border: 2px $darker-blue solid;
+  text-align: center;
+  margin: 5px 0;
+}
