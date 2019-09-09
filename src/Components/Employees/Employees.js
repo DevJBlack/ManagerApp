@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
-import { getEmployees } from '../../redux/reducers/employees'
 import axios from 'axios'
 import './Employees.scss'
 import ChangesOfEmployees from '../ChangesOfEmployees/ChangesOfEmployees'
-import { fireEmployees, updateEmployees } from '../../redux/reducers/employees'
+import { getEmployees, fireEmployees, updateEmployees } from '../../redux/reducers/employees'
 
 
 const Employees = () => {

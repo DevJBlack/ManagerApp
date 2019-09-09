@@ -25,8 +25,6 @@ app.delete('/api/employees/:id', EmployeesCtrl.fireEmployees)
 app.put('/api/employees/:id', EmployeesCtrl.updateEmployee)
 
 
-
-
 app.get('*', (req, res)=>{
     res.sendFile(path.join(__dirname, '../build/index.html'));
 });

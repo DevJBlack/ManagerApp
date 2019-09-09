@@ -10,19 +10,6 @@ module.exports = {
     }
   },
 
-  oneEmployee: async (req, res) => {
-    try {
-        let db = req.app.get('db')
-        let { id } = req.params
-        let employees = await db.employees.get_employees(id)
-        let employee = employees[0]
-        res.send(employee)
-    } catch ( error ) {
-      console.log('error fetching posts:', error)
-        res.status(500).send(error) 
-    }
-  },
-
   addEmployees: async (req, res) => {
     try {
         let db = req.app.get('db')
