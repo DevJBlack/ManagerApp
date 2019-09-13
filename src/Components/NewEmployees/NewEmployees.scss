@@ -17,6 +17,11 @@ html {
     flex-wrap: wrap;
     overflow: hidden;
   }
+
+  .NavBar {
+    margin-top: 25px;
+    width: 100%;
+  }
   
   .inputBlock {
   flex-direction: column;
@@ -24,8 +29,9 @@ html {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 70vh;
-  width: 90vw;
+  height: 60vh;
+  width: 50vw;
+  margin-top: 50px;
   border: solid 15px $darker-blue;
   border-radius: 25px;
   background-color: $background-gray;
@@ -36,7 +42,7 @@ html {
   width: 75%;
   height: 25px;
   flex-wrap: wrap;
-  margin: 35px 0;
+  margin: 30px 0;
   border-radius: 100px;
   background-color: transparent;
   border: 2px $darker-blue solid;
@@ -71,7 +77,8 @@ input::placeholder {
 
 .btn:hover {
   transform: translateY(-3px); 
-  box-shadow: 0 10px 20px rgba(0,0,0,.2)
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+  // background-color: $darker-blue;
 }
 
 .btn:active {

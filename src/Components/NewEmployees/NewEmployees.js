@@ -31,7 +31,9 @@ const NewEmployees = (props) => {
 
   return (
     <div className='homeInput'>
-      <NavBar />
+      <div className='NavBar'>
+       <NavBar />
+      </div>
       <form className='inputBlock'>
         <input
           name='first_name'

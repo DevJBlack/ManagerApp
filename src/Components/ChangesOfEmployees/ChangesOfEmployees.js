@@ -11,6 +11,7 @@ const ChangesOfEmployees = (props) => {
     phone_number: 0
   })
 
+  
 
   const handleChange = (e) => {
     const {name, value} = e.target
@@ -20,6 +21,8 @@ const ChangesOfEmployees = (props) => {
     })
   }
 
+
+  console.log(props.employee, props.employeeName,props.employeeLastName, props.employeeEmail, props.employeePhone)
   return (
     <div className='borderHome'>
       { isEditing ? 

@@ -59,6 +59,10 @@ const Employees = () => {
               <p>{employee.phone_number}</p>
             <ChangesOfEmployees 
               employee={employee.employees_id}
+              employeeName={employee.first_name}
+              employeeLastName={employee.last_name}
+              employeeEmail={employee.email}
+              employeePhone={employee.phone_number}
               letGoEmployee={letGoEmployee}
               updateEmployees={updateEmployees}
               edit={edit}
