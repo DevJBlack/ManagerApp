@@ -34,11 +34,11 @@ html {
   margin-top: 50px;
   border: solid 15px $darker-blue;
   border-radius: 25px;
-  background-color: $background-gray;
+  background-color: rgba(211, 211, 211, 0.2);
 }
 
 .inputBlock input {
-  color: $mod-blue;
+  color: #ffffff;
   width: 75%;
   height: 25px;
   flex-wrap: wrap;
@@ -49,8 +49,8 @@ html {
   text-align: center;
 }
 
-input::placeholder {
-  color: $mod-blue
+.inputBlock input::placeholder {
+  color: white
 }
 
 
@@ -68,17 +68,17 @@ input::placeholder {
 
 
 .btn {
-  background: white;
+  background: rgba(211, 211, 211, 0.2);
+  color: #ffffff;
   height: 35px;
   width: 150px;
   border-radius: 100px;
-  border: none;
+  border: 2px $darker-blue solid;
 }
 
 .btn:hover {
   transform: translateY(-3px); 
   box-shadow: 0 10px 20px rgba(0,0,0,.2);
-  // background-color: $darker-blue;
 }
 
 .btn:active {
@@ -86,10 +86,10 @@ input::placeholder {
   box-shadow: 0 5px 10px rgba(0,0,0,.2)
 }
 
-.btn-white {
-  background-color: #ffffff;
-  color: #777777;
-}
+// .btn-white {
+//   background-color: #ffffff;
+//   color: #ffffff;
+// }
 
 
 .btn:hover::after {

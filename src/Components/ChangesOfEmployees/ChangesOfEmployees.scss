@@ -44,3 +44,7 @@
   text-align: center;
   margin: 5px 0;
 }
+
+.borderHome input::placeholder {
+  color: $mod-blue
+}

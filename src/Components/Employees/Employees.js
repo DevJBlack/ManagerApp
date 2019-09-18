@@ -8,6 +8,7 @@ import { getEmployees, fireEmployees, updateEmployees } from '../../redux/reduce
 
 const Employees = () => {
   const [employees, setEmployees] = useState([])
+  // const [currentEmployee, setCurrentEmployee] = useState({})
   const [isEditing, setIsEditing] = useState(false)
   const [edit, setEdit] = useState({
     first_name: '',
@@ -28,16 +29,40 @@ const Employees = () => {
     })
   }
 
-  const updateEmployees = (id, edit) => {
+  // const updateEmployees = (id, edit) => {
+  //   axios.put(`/api/employees/${id}`, { edit }).then(res => {
+  //         setEmployees(res.data)
+  //         setIsEditing(false)
+  //         setCurrentEmployee({})
+  //       })
+  // }
+ 
+  const updateEmployees = (id, edit, ) => {
     axios.put(`/api/employees/${id}`, { edit }).then(res => {
       setEmployees(res.data)
-      setEdit({
-        first_name: '',
-        last_name: '',
-        email: '',
-        phone_number: 0
-      })
-      setIsEditing(false)
+
+      const { first_name, last_name, email, phone_number } = edit
+
+      if(first_name === '' || last_name === '' || email === '' || phone_number === ''){
+        return(
+          alert('ERROR! Please add to an input field'),
+          setEdit({
+            first_name: 'ERROR'
+          })
+        )
+      } else {
+       alert('Info updated!');
+        setEdit({
+          first_name: '',
+          last_name: '',
+          email: '',
+          phone_number: 0
+        })
+  
+        setIsEditing(false)
+  
+        console.log( first_name, last_name, email, phone_number )
+      }
     })
   }
 
@@ -63,6 +88,7 @@ const Employees = () => {
               employeeLastName={employee.last_name}
               employeeEmail={employee.email}
               employeePhone={employee.phone_number}
+              // currentEmployee={currentEmployee}
               letGoEmployee={letGoEmployee}
               updateEmployees={updateEmployees}
               edit={edit}
